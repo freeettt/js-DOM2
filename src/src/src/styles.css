@@ -1,72 +1,88 @@
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, #665200, #8b6f00);
+    color: #eee;
     margin: 0;
-    padding: 20px;
-    background-color: #bcd9f2;
+    padding: 0;
 }
 
 h1 {
-    color: #333;
-    font-size: 2em;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.gallery-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    max-width: 1200px;
     margin-top: 20px;
+    font-size: 2.5em;
+    color: #ffd700;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.6), 0 0 10px rgba(255, 215, 0, 0.3);
 }
 
-.gallery-container img {
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    max-width: 900px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.gallery img {
     width: 100%;
-    height: auto;
-    border-radius: 8px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
 
-.gallery-container img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+.gallery img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
 }
 
 .buttons {
-    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
 }
 
-button {
-    padding: 10px 20px;
-    margin: 5px;
+.buttons button {
+    padding: 12px 24px;
     font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
-    background-color: #87e39b;
-    color: #333;
     border: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.2s;
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: linear-gradient(135deg, #b8860b, #ffcc00);
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-button:hover {
-    background-color: #ff9999;
+.buttons button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
-button:active {
+.buttons button:active {
     transform: scale(0.95);
+    background: #ffcc00;
 }
 
-@media (max-width: 768px) {
-    .gallery-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
+ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-@media (max-width: 480px) {
-    .gallery-container {
-        grid-template-columns: 1fr;
-    }
+li {
+    margin: 5px 0;
+    padding: 5px;
+    color: #ddd;
 }
